@@ -16,6 +16,7 @@ app.use((req,res,next)=>{
 
 });
 //rutas
+require('./server/routes/usuarios')(app);
 
 app.get('*', (req,res)=>{
     res.status(200).send({message: "Bienvenido al servidor Node.js"})

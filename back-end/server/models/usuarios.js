@@ -1,15 +1,17 @@
 module.exports = (sequelize, DataTypes) =>{
     const usuarios = sequelize.define('usuarios', {
-        id:DataTypes.INTEGER,
+        id:{
+            autoIncrement: true, 
+            type:DataTypes.INTEGER,
+            primaryKey:true},
         usuario:DataTypes.STRING,
         password:DataTypes.STRING,
         id_rol:DataTypes.INTEGER,
         activo :DataTypes.BOOLEAN,
         usuario_creacion:DataTypes.STRING,
         createdAt:DataTypes.DATE,
-        updateAt:DataTypes.DATE
+        updatedAt:DataTypes.DATE,
     })
 
-    return usuarios;
-    
+    return usuarios;  
 }
